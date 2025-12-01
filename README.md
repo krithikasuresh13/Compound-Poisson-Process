@@ -19,8 +19,8 @@ The app includes derivations, theoretical overlays, parameter sensitivity contro
 - Four-panel simulation plots for  
   **t = 10, 100, 1000, 10000**
 - Adjustable parameters  
-  - Arrival rate \( \lambda \)  
-  - Jump rate \( \mu \)  
+  - Arrival rate \( lambda \)  
+  - Jump rate \( mu \)  
   - Number of simulations  
 - Optional theoretical PDF overlay
 - Full mathematical derivation included (Laplace transform, MGF, mean/variance, Bessel-form PDF)
