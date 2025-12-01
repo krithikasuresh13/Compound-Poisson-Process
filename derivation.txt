@@ -1,0 +1,65 @@
+Here is your **Theory Summary** rewritten in a **clean, clear, textbook-style structure**, with proper mathematical notation using plain text (ASCII-friendly) so it can be added directly as a `.txt` file or inside GitHub.
+
+---
+
+# **Theory Summary — Compound Poisson Process (Text-Friendly Version)**
+
+**Compound Poisson Process:**
+S(t) = Σ Xᵢ for i = 1 to N(t)
+
+where
+• N(t) ~ Poisson(λ t)
+• Xᵢ ~ Exponential(μ), i.i.d.
+• N(t) independent of {Xᵢ}
+
+---
+
+## 1. Laplace Transform
+
+The Laplace transform of S(t) is:
+
+L_{S(t)}(u) = E[e^(−u S(t))]
+= exp( − λ t · u/(μ + u) ).
+
+---
+
+## 2. Moment Generating Function (MGF)
+
+Since M_{S(t)}(v) = L_{S(t)}(−v):
+
+M_{S(t)}(v) = exp( λ t · v/(μ − v) ),    for v < μ.
+
+---
+
+## 3. Mean and Variance
+
+E[S(t)] = (λ t) / μ
+Var(S(t)) = 2 λ t / μ²
+
+---
+
+## 4. Continuous PDF for s > 0
+
+For s > 0, the density of S(t) is:
+
+f_{S(t)}(s) = exp( −λ t − μ s )
+× ( λ t μ / sqrt( λ t μ s ) )
+× I₁( 2 sqrt( λ t μ s ) )
+
+where I₁(·) is the modified Bessel function of the first kind.
+
+---
+
+## 5. Atom at Zero
+
+P( S(t) = 0 ) = exp( −λ t ).
+
+---
+
+## 6. Notes
+
+• S(t) has a point mass at 0 and a continuous density on s > 0.
+• For large λ t, S(t) is approximately Normal with
+mean = λ t / μ and variance = 2 λ t / μ².
+
+
