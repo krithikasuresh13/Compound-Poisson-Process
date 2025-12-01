@@ -10,7 +10,7 @@ where \(N(t)\sim\mathrm{Poisson}(\lambda t)\) (exponential interarrival times) a
 
 ---
 
-## 📌 Features
+## Features
 
 - Four-panel histograms for \(t = 10, 100, 1000, 10000\).  
 - Simulation controls for arrival rate \(\lambda\), jump rate \(\mu\), and number of simulations.  
@@ -20,7 +20,7 @@ where \(N(t)\sim\mathrm{Poisson}(\lambda t)\) (exponential interarrival times) a
 
 ---
 
-## ▶ Quick start (run locally)
+##  To start (run locally)
 
 1. Install R and RStudio (if not already installed).  
 2. From R or RStudio install required packages:
