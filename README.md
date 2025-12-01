@@ -45,13 +45,13 @@ $$
 
 ## 3. Conditional distribution of \(S(t)\)
 
-### Atom at zero:
+### At zero:
 
 $$
 P\big(S(t)=0\big) = e^{-\lambda t}
 $$
 
-### Density for \(s>0\):
+### For \(s>0\):
 
 $$
 f_{S(t)}(s) =
@@ -138,6 +138,3 @@ install.packages("shiny")
   \right).$$
 
 ---
-Author
-
-Krithika S
