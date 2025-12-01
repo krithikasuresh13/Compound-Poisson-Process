@@ -1,65 +1,68 @@
-Here is your **Theory Summary** rewritten in a **clean, clear, textbook-style structure**, with proper mathematical notation using plain text (ASCII-friendly) so it can be added directly as a `.txt` file or inside GitHub.
-
----
-
-# **Theory Summary — Compound Poisson Process (Text-Friendly Version)**
-
-**Compound Poisson Process:**
-S(t) = Σ Xᵢ for i = 1 to N(t)
-
-where
-• N(t) ~ Poisson(λ t)
-• Xᵢ ~ Exponential(μ), i.i.d.
-• N(t) independent of {Xᵢ}
-
----
-
-## 1. Laplace Transform
-
-The Laplace transform of S(t) is:
-
-L_{S(t)}(u) = E[e^(−u S(t))]
-= exp( − λ t · u/(μ + u) ).
-
----
-
-## 2. Moment Generating Function (MGF)
-
-Since M_{S(t)}(v) = L_{S(t)}(−v):
-
-M_{S(t)}(v) = exp( λ t · v/(μ − v) ),    for v < μ.
-
----
-
-## 3. Mean and Variance
-
-E[S(t)] = (λ t) / μ
-Var(S(t)) = 2 λ t / μ²
-
----
-
-## 4. Continuous PDF for s > 0
-
-For s > 0, the density of S(t) is:
-
-f_{S(t)}(s) = exp( −λ t − μ s )
-× ( λ t μ / sqrt( λ t μ s ) )
-× I₁( 2 sqrt( λ t μ s ) )
-
-where I₁(·) is the modified Bessel function of the first kind.
-
----
-
-## 5. Atom at Zero
-
-P( S(t) = 0 ) = exp( −λ t ).
-
----
-
-## 6. Notes
-
-• S(t) has a point mass at 0 and a continuous density on s > 0.
-• For large λ t, S(t) is approximately Normal with
-mean = λ t / μ and variance = 2 λ t / μ².
-
-
+Derivation of the Compound Process
+Definition
+We study the compound process
+S(t)=∑i=1N(t)Xi
+ 
+with
+N(t)∼Poisson(λt)
+ 
+(exponential interarrival times) and
+Xi∼iidExponential(μ).
+ 
+Laplace transform
+The Laplace transform is defined as:
+LS(t)(u)=E[e−uS(t)].
+ 
+Condition on  N(t)
+ :
+E[e−uS(t)∣N(t)=n]=(E[e−uX1])n.
+ 
+For an exponential( μ
+ ) jump:
+E[e−uX1]=μμ+u.
+ 
+Using the PGF of Poisson,  E[sN(t)]=exp(λt(s−1))
+ , set  s=μ/(μ+u)
+  to get
+LS(t)(u)=exp(−λtuμ+u).
+ 
+Moment Generating Function (MGF)
+MGF is  MS(t)(v)=E[evS(t)]
+ . Relate to Laplace transform by  MS(t)(v)=LS(t)(−v)
+ .
+Therefore:
+MS(t)(v)=exp(λtvμ−v),v<μ.
+ 
+Mean and Variance
+From compound-Poisson identities:
+E[S(t)]=E[N(t)]E[X]=λtμ,
+ 
+Var(S(t))=λtE[X2]=2λtμ2.
+ 
+At zero and continuous density
+Point mass at zero:
+P(S(t)=0)=P(N(t)=0)=e−λt.
+ 
+For  s>0
+ , the continuous pdf (Poisson–Gamma mixture) can be written as
+fS(t)(s)=e−λt−μs∑n=1∞(λt)nn!μnsn−1(n−1)!,s>0.
+ 
+This series has a closed form using the modified Bessel function:
+fS(t)(s)=e−λt−μsλtμλtμs−−−−√I1(2λtμs−−−−√),s>0.
+ 
+Normal approximation (large  λt
+ )
+By the CLT, for large  λt
+ :
+S(t)≈N(λtμ, 2λtμ2).
+ 
+Note
+∙
+  Larger  λ
+  increases the expected number of jumps and reduces mass at zero.
+∙
+  Larger  μ
+  makes jumps smaller (reduces mean and variance).
+∙
+  For very large  λt
+  use the normal approximation to avoid numerical instability evaluating the Bessel form.
