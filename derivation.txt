@@ -1,68 +1,63 @@
-Derivation of the Compound Process
-Definition
-We study the compound process
-S(t)=∑i=1N(t)Xi
- 
-with
-N(t)∼Poisson(λt)
- 
-(exponential interarrival times) and
-Xi∼iidExponential(μ).
- 
-Laplace transform
-The Laplace transform is defined as:
-LS(t)(u)=E[e−uS(t)].
- 
-Condition on  N(t)
- :
-E[e−uS(t)∣N(t)=n]=(E[e−uX1])n.
- 
-For an exponential( μ
- ) jump:
-E[e−uX1]=μμ+u.
- 
-Using the PGF of Poisson,  E[sN(t)]=exp(λt(s−1))
- , set  s=μ/(μ+u)
-  to get
-LS(t)(u)=exp(−λtuμ+u).
- 
-Moment Generating Function (MGF)
-MGF is  MS(t)(v)=E[evS(t)]
- . Relate to Laplace transform by  MS(t)(v)=LS(t)(−v)
- .
-Therefore:
-MS(t)(v)=exp(λtvμ−v),v<μ.
- 
-Mean and Variance
-From compound-Poisson identities:
-E[S(t)]=E[N(t)]E[X]=λtμ,
- 
-Var(S(t))=λtE[X2]=2λtμ2.
- 
-At zero and continuous density
-Point mass at zero:
-P(S(t)=0)=P(N(t)=0)=e−λt.
- 
-For  s>0
- , the continuous pdf (Poisson–Gamma mixture) can be written as
-fS(t)(s)=e−λt−μs∑n=1∞(λt)nn!μnsn−1(n−1)!,s>0.
- 
-This series has a closed form using the modified Bessel function:
-fS(t)(s)=e−λt−μsλtμλtμs−−−−√I1(2λtμs−−−−√),s>0.
- 
-Normal approximation (large  λt
- )
-By the CLT, for large  λt
- :
-S(t)≈N(λtμ, 2λtμ2).
- 
-Note
-∙
-  Larger  λ
-  increases the expected number of jumps and reduces mass at zero.
-∙
-  Larger  μ
-  makes jumps smaller (reduces mean and variance).
-∙
-  For very large  λt
-  use the normal approximation to avoid numerical instability evaluating the Bessel form.
+Derivation — Compound Poisson Process S(t)
+
+We consider the compound Poisson process
+S(t) = X1 + X2 + ... + X_{N(t)},
+where:
+• N(t) ~ Poisson(λ t)
+• Xi are iid Exponential(μ)
+• N(t) is independent of Xi.
+
+----------------------------------------------------
+1. Laplace Transform
+
+
+The Laplace transform of S(t) is:
+
+L_S(t)(u) = E[ e^(−u S(t)) ]
+          = exp( − λ t * (u / (μ + u)) ).
+
+----------------------------------------------------
+2. Moment Generating Function (MGF)
+
+Using the relation M_S(t)(v) = L_S(t)(−v):
+
+M_S(t)(v) = exp( λ t * (v / (μ − v)) ),   for v < μ.
+
+----------------------------------------------------
+3. Mean and Variance
+
+
+Mean:
+E[S(t)] = (λ t) / μ
+
+Variance:
+Var(S(t)) = 2 λ t / μ^2
+
+----------------------------------------------------
+4.PDF for s > 0
+
+
+For s > 0, the density of S(t) is:
+
+f_S(t)(s) = exp( −(λ t + μ s) )
+            * (λ t μ) / sqrt(λ t μ s)
+            * I1( 2 * sqrt(λ t μ s) ),
+
+where I1 is the modified Bessel function of the first kind.
+
+----------------------------------------------------
+5. PDF of S(t) at Zero
+
+The distribution has a point mass at zero:
+
+P( S(t) = 0 ) = exp( − λ t ).
+
+----------------------------------------------------
+6. Notes
+
+
+• S(t) has a mixed distribution: a point mass at 0 and a continuous density for s > 0.
+• For large values of λ t, S(t) is approximately Normal with:
+      mean = λ t / μ
+      variance = 2 λ t / μ^2
+• S(t) is a classical model in queueing systems, risk theory, and renewal processes.
