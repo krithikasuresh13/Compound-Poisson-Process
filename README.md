@@ -2,12 +2,16 @@
 
 **Interactive R Shiny app** for simulating and visualizing the compound Poisson process
 
+This project studies the compound Poisson process
+
 \[
-S(t)=\sum_{i=1}^{N(t)} X_i
+S(t) = \sum_{i=1}^{N(t)} X_i,
 \]
 
-where \(N(t)\sim\mathrm{Poisson}(\lambda t)\) (exponential interarrival times) and \(X_i \overset{\mathrm{iid}}{\sim}\mathrm{Exponential}(\mu)\). The app includes derivations, theoretical overlays, and interactive sensitivity analysis.
-
+where  
+- \( N(t) \sim \text{Poisson}(\lambda t) \) represents the number of arrivals by time \(t\) (i.e., exponential interarrival times), and  
+- \( X_i \overset{\text{iid}}{\sim} \text{Exponential}(\mu) \) are independent jump sizes.
+- 
 ---
 
 ## Features
