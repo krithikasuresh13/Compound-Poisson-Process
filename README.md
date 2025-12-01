@@ -11,7 +11,7 @@ S(t) = \sum_{i=1}^{N(t)} X_i,
 where  
 - \( N(t) \sim \text{Poisson}(\lambda t) \) represents the number of arrivals by time \(t\) (i.e., exponential interarrival times), and  
 - \( X_i \overset{\text{iid}}{\sim} \text{Exponential}(\mu) \) are independent jump sizes.
-- 
+  
 ---
 
 ## Features
